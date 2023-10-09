@@ -73,6 +73,7 @@
     <Compile Include="Assets\CreditHandler.cs" />
     <Compile Include="Assets\CreditManager.cs" />
     <Compile Include="Assets\Dice.cs" />
+    <Compile Include="Assets\DiceHandler.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\readme.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
