@@ -20,7 +20,7 @@ public class ButtonDiceRoll : MonoBehaviour
 
     public void OnRollDiceButtonCallback()
     {
-        //gm.RollDiceButtonPressed();
-        //GameManager.instance.rollDictButtonPressed()
+        //.RollDiceButtonPressed();
+        GameManager.Instance.RollDiceButtonPressed();
     }
 }

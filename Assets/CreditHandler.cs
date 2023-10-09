@@ -23,6 +23,13 @@ public class CreditHandler : MonoBehaviour
         {
             credits -= bet; // Deduct the bet amount from the credits
         }
+
+        //******** TESTING PURPOSE ONLY
+        if (credits < 50)
+        {
+            credits = 100;
+        }
+
         creditDisplay.SetValue(credits);
     }
 

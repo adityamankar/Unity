@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         /*for both dices:
                 rolldice();
         */
-        Debug.Log("play handled by game manager");
+        //Debug.Log("play handled by game manager");
         creditHandler.TakeCredit(betHandler.GetCurrBet());
         //change state to running
     }
