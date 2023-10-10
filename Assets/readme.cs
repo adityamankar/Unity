@@ -12,6 +12,11 @@ for me
 what is serlialized
 prefab
 
+animations can be based on its completion. currently it is fixed time based
+
+all buttons can be tagged the same
+
+other option was to use switch case for the state of the game and execute functions accordingly
 
 there are lot of places where i could have containerized the assets like all buttons under one umbrella
 
@@ -20,6 +25,8 @@ instead of assigning game object from inspector, you can search for name of obje
 but it is expensive
 
 max bet has instance of changebet to perform functions. ideally i would need handler seperate and will control both buttons seperately and dispaly separately as well
+
+dont destroy on load
 
 
 

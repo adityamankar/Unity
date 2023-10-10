@@ -6,7 +6,7 @@ using TMPro; // Import TextMeshPro
 public class Dice : MonoBehaviour
 {
     public GameObject objectToColor;
-    public Button colorButton;
+    //public Button colorButton;
     public TMP_Text numberText; // Reference to the TextMeshPro text element.
 
     private Renderer objectRenderer;
@@ -16,7 +16,7 @@ public class Dice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        colorButton.onClick.AddListener(ChangeColor);
+        //colorButton.onClick.AddListener(ChangeColor);
         objectRenderer = objectToColor.GetComponent<Renderer>();
         originalColor = objectRenderer.material.color;
         value = 1;
@@ -28,7 +28,6 @@ public class Dice : MonoBehaviour
         objectRenderer.material.color = Color.red;
 
         // Generate a random number between 1 and 6 and display it
-        value = Random.Range(1, 7);
         numberText.text = value.ToString();
 
         // Delay for a moment (you can adjust the duration)
@@ -38,7 +37,7 @@ public class Dice : MonoBehaviour
     private IEnumerator ResetColorAfterDelay()
     {
         // Wait for a moment (e.g., 1 second)
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
         // Restore the original color
         objectRenderer.material.color = originalColor;
@@ -47,5 +46,10 @@ public class Dice : MonoBehaviour
     public int GetDiceValue()
     {
         return value;
+    }
+
+    public void SetDiceValue(int val)
+    {
+        value = val;
     }
 }

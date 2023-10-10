@@ -43,6 +43,20 @@ public class CreditHandler : MonoBehaviour
         creditDisplay.SetValue(credits);
     }
 
+    // Function to add winnings to the credits
+    public void AddWinsDontReflect(int winnings)
+    {
+        if (winnings > 0)
+        {
+            credits += winnings; // Add the winnings to the credits
+        }
+        //creditDisplay.SetValue(credits);
+    }
+    public void UpdateWinAmount()
+    {
+        creditDisplay.SetValue(credits);
+    }
+
     // Function to get the current credits value
     public int GetCredits()
     {

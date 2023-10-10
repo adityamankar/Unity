@@ -18,7 +18,6 @@ public class DiceHandler : MonoBehaviour
                 Debug.Log("rolling dices");
                 obj.SetDiceValue(Random.Range(1, 7));
                 obj.ChangeColor();
-                Debug.Log("rolling dices again");
             }
         }
     }
