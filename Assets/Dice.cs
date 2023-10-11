@@ -26,6 +26,10 @@ public class Dice : MonoBehaviour
         value = 1;
     }
 
+    /// <summary>
+    /// Changes the value of the dice randomly to simulate rolling, with an animation.
+    /// </summary>
+    /// <param name="diceOutcome">The desired outcome value of the dice after animation.</param>
     public void ChangeValueRandomly(int diceOutcome)
     {
         // Generate a random target value between 1 and 6
@@ -41,6 +45,12 @@ public class Dice : MonoBehaviour
         animationCoroutine = StartCoroutine(AnimateValueChange(randomTargetValue, GameManager.ANIM_TIME, diceOutcome));
     }
 
+    /// <summary>
+    /// Animates the change of the dice value from the current value to a target value.
+    /// </summary>
+    /// <param name="targetValue">The target value for the dice.</param>
+    /// <param name="duration">The duration of the animation.</param>
+    /// <param name="diceOutcome">The desired outcome value of the dice after animation.</param>
     private IEnumerator AnimateValueChange(int targetValue, float duration, int diceOutcome)
     {
         float elapsedTime = 0f;
@@ -78,6 +88,9 @@ public class Dice : MonoBehaviour
         numberText.text = value.ToString();
     }
 
+    /// <summary>
+    /// Changes the color of the dice object and displays its current value with a delay.
+    /// </summary>
     public void ChangeColor()
     {
         // Change the object's color (e.g., to red)
@@ -90,6 +103,9 @@ public class Dice : MonoBehaviour
         StartCoroutine(ResetColorAfterDelay());
     }
 
+    /// <summary>
+    /// Resets the color of the dice object to its original color after a delay.
+    /// </summary>
     private IEnumerator ResetColorAfterDelay()
     {
         // Wait for a moment (e.g., 1 second)

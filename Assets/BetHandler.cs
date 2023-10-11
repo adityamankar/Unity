@@ -8,13 +8,19 @@ public class BetHandler : MonoBehaviour
     private int currentBetIndex;
     public BetDisplay betDisplay;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Perform default settings
+    /// </summary>
     void Start()
     {
         currentBetIndex = 2;
         betDisplay.SetValue(GetCurrBet());
     }
 
+    /// <summary>
+    /// Go to next possible bet
+    /// </summary>
+    /// <returns></returns>
     public int GetNextBet()
     {
         currentBetIndex++;
@@ -25,6 +31,10 @@ public class BetHandler : MonoBehaviour
         return possibleBetValues[currentBetIndex];
     }
 
+    /// <summary>
+    /// Go to highest possible bet
+    /// </summary>
+    /// <returns></returns>
     public int GetMaxBet()
     {
         currentBetIndex = possibleBetValues.Length - 1;
@@ -40,6 +50,10 @@ public class BetHandler : MonoBehaviour
         UpdateBet(GetMaxBet());
     }
 
+    /// <summary>
+    /// Update the graphics of bet
+    /// </summary>
+    /// <param name="betVal"></param>
     public void UpdateBet(int betVal)
     {
         betDisplay.SetValue(betVal);
@@ -49,6 +63,4 @@ public class BetHandler : MonoBehaviour
     {
         return possibleBetValues[currentBetIndex];
     }
-
-
 }

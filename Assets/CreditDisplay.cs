@@ -9,12 +9,15 @@ public class CreditDisplay : MonoBehaviour
     public TMP_Text numberText; // Reference to the TextMeshPro text element.
     private int value;  //default bet
 
-    // Start is called before the first frame update
     void Start()
     {
         numberText.text = value.ToString();
     }
 
+    /// <summary>
+    /// update the value displayed in credit meter
+    /// </summary>
+    /// <param name="val"></param>
     public void SetValue(int val)
     {
         value = val;

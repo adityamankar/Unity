@@ -18,6 +18,9 @@ public class LoseSplash : MonoBehaviour
         transform.localScale = minScale;
     }
 
+    /// <summary>
+    /// Activates the splash animation if it's not already in progress.
+    /// </summary>
     public void Splash()
     {
         gameObject.SetActive(true);
@@ -27,6 +30,10 @@ public class LoseSplash : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Plays the splash animation, scaling the object up and then down.
+    /// </summary>
+    /// <returns>An IEnumerator for the animation coroutine.</returns>
     public IEnumerator PlaySplash()
     {
         isAnimating = true; // Set the animation flag to true.
@@ -52,6 +59,9 @@ public class LoseSplash : MonoBehaviour
         //gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Repeatedly lerps (linearly interpolates) the scale of the object from startScale to endScale.
+    /// </summary>
     IEnumerator RepeatLerping(Vector3 startScale, Vector3 endScale, float time)
     {
         float t = 0.0f;

@@ -10,19 +10,17 @@ public class ButtonHandler : MonoBehaviour
     public Button maxBetButton;
     public Button exitButton;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    /// <summary>
+    /// Sets interactability for multiple buttons by enabling or disabling it.
+    /// </summary>
+    /// <param name="status">Interactability status to apply.</param>
     public void SetAllButtonInteractable(bool status)
     {
         playButton.interactable = status;
         changeBetButton.interactable = status;
         maxBetButton.interactable = status;
     }
+
     // All buttons can be derived from a parent Button class and use dependency injection here
     public void SetPlayInteractable(bool status)
     {

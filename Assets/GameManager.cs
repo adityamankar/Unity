@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    // Enum to represent game states
+    /// Enum to represent game states
     public enum GameState
     {
         Idle,
@@ -12,14 +12,14 @@ public class GameManager : MonoBehaviour
         Award
     }
 
-    //ideally animations should be based on each animation but I am keeping it constant
+    /// ideally animations should be based on each animation but I am keeping it constant.
     public const float ANIM_TIME = 2.0f;
 
     private IGameState currentState;
     private Dictionary<GameState, IGameState> stateMap; 
     private bool isTransitioning = false; // Flag to block input during transitions
 
-    // -----------Objects 
+    /// -----------Objects 
     public CreditHandler creditHandler;
     public BetHandler betHandler;
     public DiceHandler diceHandler;
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public SplashHandler splashHandler;
 
 
-    // -----------singleton object
+    /// -----------singleton object
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -66,10 +66,10 @@ public class GameManager : MonoBehaviour
         currentState = stateMap[GameState.Idle];
     }
 
-    // ------------Game Number 
-    //
-    //  I will use game number to keep the track, but it can all be handled more elegenetly in real world game
-    //  increment this after you take credit for each game
+    /// ------------Game Number 
+    ///
+    ///  I will use game number to keep the track, but it can all be handled more elegenetly in real world game
+    ///  increment this after you take credit for each game
     private static int gameNumber = -1;
     public int GetGameNumber() => gameNumber;
 
@@ -77,7 +77,13 @@ public class GameManager : MonoBehaviour
     public void UpdateGameNumber() => gameNumber = (gameNumber + 1) % MathHandler.Instance.GetMathFileEntries(); 
     public bool IsWinningPlay() => (diceHandler.GetGamplayResult() == MathHandler.Instance.GetWinningSum());
 
-
+    /// <summary>
+    /// Changes the game state to the specified state and delegates the state change to the current state object.
+    /// </summary>
+    /// <param name="newState">The new game state to transition to.</param>
+    /// <remarks>
+    /// The <c>SetGameState</c> method allows you to change the game state to a new state. If the game is in the process of transitioning, the method does nothing.
+    /// </remarks>
     public void SetGameState(GameState newState)
     {
         if (currentState != null && !isTransitioning)
@@ -96,6 +102,9 @@ public class GameManager : MonoBehaviour
         return currentState;
     }
 
+    /// <summary>
+    /// End the application
+    /// </summary>
     public void EndGame()
     {
         Application.Quit();

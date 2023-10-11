@@ -13,12 +13,11 @@ public class CreditManager : MonoBehaviour
 
     void Start()
     {
-        // You can initialize or perform setup tasks here if needed.
         credits = default_credits;
         numberText.text = credits.ToString();
     }
 
-    // Function to deduct credits based on the bet amount
+    /// Function to deduct credits based on the bet amount
     public void TakeCredit(int bet)
     {
         //int bet = betmanger.get();
@@ -35,7 +34,7 @@ public class CreditManager : MonoBehaviour
         }
     }
 
-    // Function to add winnings to the credits
+    /// Function to add winnings to the credits
     public void AddWins(int winnings)
     {
         if (winnings > 0)
@@ -49,13 +48,13 @@ public class CreditManager : MonoBehaviour
         }
     }
 
-    // Function to get the current credits value
+    /// Function to get the current credits value
     public int GetCredits()
     {
         return credits;
     }
 
-    // Function to reset credits to the initial value (2000)
+    /// Function to reset credits to the initial value (2000)
     public void ResetCredits()
     {
         credits = 2000;

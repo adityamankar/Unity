@@ -6,24 +6,13 @@ public class SplashHandler : MonoBehaviour
 {
     /// <summary>
     /// All the splashed that could be used in game are managed here
-    /// 
-    /// 
-    /// 
     /// </summary>
     public WinSplash winSplash;
     public LoseSplash loseSplash;
 
-    void Start()
-    {
-        
-    }
-
     /// <summary>
-    /// 
     /// It could be TriggerSplash(SplashType obj)
-    /// 
-    /// But only one is used. No need for POLYMORPHISM as of now in this
-    /// 
+    /// But only two are used. No need for POLYMORPHISM as of now in this
     /// </summary>
     public void TriggerWinSplash()
     {
@@ -38,9 +27,5 @@ public class SplashHandler : MonoBehaviour
             loseSplash.Splash();
         else
             Debug.Log("lose splash not working");
-    }
-    public void DisableWinSplash()
-    {
-        winSplash.DisableSplash();
     }
 }

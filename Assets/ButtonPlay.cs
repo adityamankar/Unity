@@ -5,13 +5,6 @@ using UnityEngine.UI;
 
 public class ButtonPlay : MonoBehaviour
 {
-    //public GameManager gm;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     public void OnRollDiceButtonCallback()
     {
         //Debug.Log("roll dice clicked and callback called");

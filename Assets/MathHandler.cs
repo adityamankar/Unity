@@ -54,7 +54,7 @@ public class MathHandler : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
     
-    // Get the dice sum for a specific game number
+    /// Get the dice sum for a specific game number
     public int GetDiceSumForThisGame(int gameNumber)
     {
         if (gameNumber >= 0 && gameNumber < MATH_FILE_ENTRIES)
