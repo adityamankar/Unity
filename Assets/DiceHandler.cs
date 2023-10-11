@@ -5,19 +5,39 @@ using UnityEngine;
 public class DiceHandler : MonoBehaviour
 {
     public Dice[] Dices = new Dice[2];
+    public int[] DicesValue = new int[2];
+    private readonly int DEFAULT_VALUES = 1;
+
+    protected readonly int DICE_MIN_VALUE = 1;
+    protected readonly int DICE_MAX_VALUE = 6;
+
     void Start()
-    { 
+    {
+        DicesValue[0] = DEFAULT_VALUES;
+        DicesValue[1] = DEFAULT_VALUES;
     }
 
+    private void DetermineOutcome()
+    {
+        int total = GameManager.MATH_FILE[GameManager.Instance.GetGameNumber()];
+
+        while (DicesValue[0] + DicesValue[1] != total)
+        {
+            DicesValue[0] = Random.Range(1, 7);
+            DicesValue[1] = Random.Range(1, 7);
+        }
+    }
+
+    //public void RollDices( Dice[0], Doce[1])
     public void RollDices()
     {
-        foreach (Dice obj in Dices)
+        DetermineOutcome();
+        for (int i = 0; i < Dices.Length; i++)
         {
-            if (obj != null) // Check if the object is not null
+            if (Dices[i] != null && i < DicesValue.Length)
             {
-                Debug.Log("rolling dices");
-                obj.SetDiceValue(Random.Range(1, 7));
-                obj.ChangeColor();
+                Dices[i].ChangeColor();
+                Dices[i].ChangeValueRandomly(DicesValue[i]);
             }
         }
     }
@@ -31,5 +51,14 @@ public class DiceHandler : MonoBehaviour
         }
 
         return totalDiceValue;
+    }
+
+    public void SetDiceValues(int dice1Value, int dice2Value)
+    {
+        if (Dices.Length >= 2 && Dices[0] != null && Dices[1] != null)
+        {
+            Dices[0].SetDiceValue(dice1Value);
+            Dices[1].SetDiceValue(dice2Value);
+        }
     }
 }

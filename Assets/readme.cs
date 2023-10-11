@@ -28,12 +28,16 @@ max bet has instance of changebet to perform functions. ideally i would need han
 
 dont destroy on load
 
+used only one scene
+
+disable buttons only it changes state
+
+gameobject refers to the current object ?
+
+<a href="https://www.freepik.com/free-photo/dirty-pattern-paint-room-block_1088379.htm#query=white%20background&position=42&from_view=keyword&track=ais">Image by mrsiraphol</a> on Freepik
 
 
-
-
-
-
+i was not able to get the object that the script is attached to through script. i thought gameObject does this. but then i attached the same object to script through inspeactor
 
 
 
