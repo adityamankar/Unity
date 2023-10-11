@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3753624312293560148}
   - component: {fileID: 3753624312293560150}
-  - component: {fileID: 3753624312293560151}
+  - component: {fileID: 231366878}
   m_Layer: 5
   m_Name: Dice
   m_TagString: Untagged
@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 3753624312293560149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children:
   - {fileID: 3753624313183892429}
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 417d401ef26347042b7f89ce5f36ae2c, type: 3}
-  m_Color: {r: 0.8490566, g: 0.41251338, b: 0.41251338, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a69acdd5c04750e4282649cb84b3db62, type: 3}
+  m_Color: {r: 0.503026, g: 0.6530286, b: 0.6792453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3753624312293560151
+--- !u!114 &231366878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToColor: {fileID: 3753624312293560149}
-  colorButton: {fileID: 0}
   numberText: {fileID: 3753624313183892428}
 --- !u!1 &3753624313183892426
 GameObject:

@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviour
         if (currentState != null && !isTransitioning)
         {
             //isTransitioning = true; // Flag to block input during transition.
-            Debug.Log($"Changing game state from {currentState} to {newState}");
+            string message = $"Changing game state to {newState}";
+            Debug.Log(message);
             currentState = stateMap[newState];
             // Delegate the state change to the current state object
             currentState.HandleStateChange(newState);
