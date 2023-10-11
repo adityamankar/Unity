@@ -11,6 +11,7 @@ public class SplashHandler : MonoBehaviour
     /// 
     /// </summary>
     public WinSplash winSplash;
+    public LoseSplash loseSplash;
 
     void Start()
     {
@@ -30,6 +31,13 @@ public class SplashHandler : MonoBehaviour
             winSplash.Splash();
         else
             Debug.Log("win splash not working");
+    }
+    public void TriggerLoseSplash()
+    {
+        if (loseSplash)
+            loseSplash.Splash();
+        else
+            Debug.Log("lose splash not working");
     }
     public void DisableWinSplash()
     {

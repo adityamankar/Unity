@@ -1,4 +1,11 @@
 ﻿/*
+attribution:
+<a href="https://www.flaticon.com/free-icons/you-win" title="you win icons">You win icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/lose" title="lose icons">Lose icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/exit" title="exit icons">Exit icons created by Freepik - Flaticon</a>
+
+
+
 
 used only one scene to avoid the complexity in future that might arise due to unfamilarity with scene management. It might have caused issue while creating a build.
 

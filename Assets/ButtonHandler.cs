@@ -8,6 +8,7 @@ public class ButtonHandler : MonoBehaviour
     public Button playButton;
     public Button changeBetButton;
     public Button maxBetButton;
+    public Button exitButton;
 
 
     // Start is called before the first frame update
@@ -32,6 +33,10 @@ public class ButtonHandler : MonoBehaviour
         changeBetButton.interactable = status;
     }
     public void SetMaxBetInteractable(bool status)
+    {
+        maxBetButton.interactable = status;
+    }
+    public void SetExitInteractable(bool status)
     {
         maxBetButton.interactable = status;
     }

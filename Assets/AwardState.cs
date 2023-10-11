@@ -13,7 +13,7 @@ public class AwardState : IGameState
     }
 
     public void RollDiceButtonPressed() {}
-
+    public void ExitButtonPressed() {}
     public void HandleCoroutines(IEnumerator coroutine)
     {
         manager.StartCoroutine(coroutine);
@@ -27,8 +27,11 @@ public class AwardState : IGameState
     private void AwardGame()
     {
         //ideally there should be a state here where it will wait for animatio to complete
-        if (manager.IsWinningPlay())
+        //if (manager.IsWinningPlay())
+        if (true)
             manager.splashHandler.TriggerWinSplash();
+        else
+            manager.splashHandler.TriggerLoseSplash();
 
         //would be useful to add animations to win increasing gradually
         manager.creditHandler.UpdateWinAmount();

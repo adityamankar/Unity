@@ -15,7 +15,10 @@ public class IdleState : IGameState
     {
         manager.StartCoroutine(coroutine);
     }
-
+    public void ExitButtonPressed()
+    {
+        manager.EndGame();
+    }
     public void HandleStateChange(GameManager.GameState newState)
     {
         manager.buttonHandler.SetAllButtonInteractable(true);

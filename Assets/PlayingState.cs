@@ -17,6 +17,7 @@ public class PlayingState : IGameState
     }
 
     public void RollDiceButtonPressed() { }
+    public void ExitButtonPressed() { }
 
     public void HandleStateChange(GameManager.GameState newState)
     {

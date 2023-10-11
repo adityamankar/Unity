@@ -96,5 +96,10 @@ public class GameManager : MonoBehaviour
         return currentState;
     }
 
+    public void EndGame()
+    {
+        Application.Quit();
+    }
+
 }
 

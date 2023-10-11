@@ -46,30 +46,6 @@ public class WinSplash : MonoBehaviour
         // Optionally, disable the GameObject.
         gameObject.SetActive(false);
     }
-    //public IEnumerator PlaySplash()
-    //{
-    //    //gameObject.SetActive(true);
-    //    isAnimating = true;
-
-    //    while (repeatFlag)
-    //    {
-    //        yield return RepeatLerping(minScale, maxScale, scalingDuration);
-
-    //        // Wait for the scaling up animation to finish before proceeding
-    //        while (transform.localScale != maxScale)
-    //        {
-    //            yield return null;
-    //        }
-
-    //        yield return RepeatLerping(maxScale, minScale, scalingDuration);
-
-    //        // Wait for the scaling down animation to finish before proceeding
-    //        while (transform.localScale != minScale)
-    //        {
-    //            yield return null;
-    //        }
-    //    }
-    //}
 
     public void DisableSplash()
     {

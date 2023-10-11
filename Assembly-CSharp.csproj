@@ -76,9 +76,11 @@
     <Compile Include="Assets\CreditManager.cs" />
     <Compile Include="Assets\Dice.cs" />
     <Compile Include="Assets\DiceHandler.cs" />
+    <Compile Include="Assets\ExitButton.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\IdleState.cs" />
     <Compile Include="Assets\IGameState.cs" />
+    <Compile Include="Assets\LoseSplash.cs" />
     <Compile Include="Assets\MathHandler.cs" />
     <Compile Include="Assets\PlayingState.cs" />
     <Compile Include="Assets\readme.cs" />
