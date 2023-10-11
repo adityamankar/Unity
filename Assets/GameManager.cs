@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
 
     //update only after credit has been deducted from the game
     public void UpdateGameNumber() => gameNumber = (gameNumber + 1) % MathHandler.Instance.GetMathFileEntries(); 
-    public bool IsWinningPlay() => (diceHandler.GetGamplayResult() >= MathHandler.Instance.GetWinningSum());
+    public bool IsWinningPlay() => (diceHandler.GetGamplayResult() == MathHandler.Instance.GetWinningSum());
 
 
     public void SetGameState(GameState newState)

@@ -1302,10 +1302,10 @@ RectTransform:
   m_Father: {fileID: 384738589}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -65, y: 122}
-  m_SizeDelta: {x: -0.89272, y: 1.4}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 186.39, y: 115.19}
+  m_SizeDelta: {x: -0.8927307, y: 1.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &827670184
 SpriteRenderer:
@@ -1647,10 +1647,10 @@ RectTransform:
   m_Father: {fileID: 384738589}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 554, y: 312}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1666618513
 CanvasRenderer:
@@ -2448,7 +2448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minScale: {x: 0, y: 0, z: 0}
-  maxScale: {x: 3, y: 3, z: 3}
+  maxScale: {x: 1.5, y: 1.5, z: 1.5}
   repeatFlag: 0
   scalingSpeed: 5
   scalingDuration: 2

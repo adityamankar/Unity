@@ -1,5 +1,7 @@
 ﻿/*
 
+used only one scene to avoid the complexity in future that might arise due to unfamilarity with scene management. It might have caused issue while creating a build.
+
 focused on the main game functionality. No intro and exit options.
 
 Each fcuntionality should have 3 files, Handler - Graphic Control - Logic Control. Since the logic is very small, i integrated in handler class
@@ -37,7 +39,7 @@ max bet has instance of changebet to perform functions. ideally i would need han
 
 dont destroy on load
 
-used only one scene
+
 
 disable buttons only it changes state
 
