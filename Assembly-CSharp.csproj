@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AwardState.cs" />
     <Compile Include="Assets\BetDisplay.cs" />
     <Compile Include="Assets\BetHandler.cs" />
     <Compile Include="Assets\ButtonHandler.cs" />
@@ -76,7 +77,10 @@
     <Compile Include="Assets\Dice.cs" />
     <Compile Include="Assets\DiceHandler.cs" />
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\IdleState.cs" />
+    <Compile Include="Assets\IGameState.cs" />
     <Compile Include="Assets\MathHandler.cs" />
+    <Compile Include="Assets\PlayingState.cs" />
     <Compile Include="Assets\readme.cs" />
     <Compile Include="Assets\SplashHandler.cs" />
     <Compile Include="Assets\WinSplash.cs" />

@@ -52,7 +52,7 @@ public class Dice : MonoBehaviour
             float t = elapsedTime / duration;
 
             //Adjust the speed of the animation
-            t *= 5f;
+            t *= 10f;
 
             value = Mathf.RoundToInt(Mathf.Lerp(startValue, targetValue, t));
 
@@ -63,7 +63,6 @@ public class Dice : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the final value is the targetValue
         value = targetValue;
         numberText.text = value.ToString();
 

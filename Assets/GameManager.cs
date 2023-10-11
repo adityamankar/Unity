@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class GameManager : MonoBehaviour
     //ideally animations should be based on each animation but I am keeping it constant
     public const float ANIM_TIME = 2.0f;
 
-    private GameState currentState = GameState.Idle;
+    private IGameState currentState;
+    private Dictionary<GameState, IGameState> stateMap; 
     private bool isTransitioning = false; // Flag to block input during transitions
 
     // -----------Objects 
@@ -23,7 +25,6 @@ public class GameManager : MonoBehaviour
     public DiceHandler diceHandler;
     public ButtonHandler buttonHandler;
     public SplashHandler splashHandler;
-    //public MathHandler mathHandler;
 
 
     // -----------singleton object
@@ -54,6 +55,15 @@ public class GameManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(this.gameObject);
+
+        stateMap = new Dictionary<GameState, IGameState>
+        {
+            { GameState.Idle, new IdleState(this) },
+            { GameState.Playing, new PlayingState(this) },
+            { GameState.Award, new AwardState(this) }
+        };
+
+        currentState = stateMap[GameState.Idle];
     }
 
     // ------------Game Number 
@@ -64,112 +74,26 @@ public class GameManager : MonoBehaviour
     public int GetGameNumber() => gameNumber;
 
     //update only after credit has been deducted from the game
-    private void UpdateGameNumber() 
-    { 
-        gameNumber = (gameNumber + 1) % MathHandler.Instance.GetMathFileEntries(); 
-    }
+    public void UpdateGameNumber() => gameNumber = (gameNumber + 1) % MathHandler.Instance.GetMathFileEntries(); 
+    public bool IsWinningPlay() => (diceHandler.GetGamplayResult() >= MathHandler.Instance.GetWinningSum());
 
-    // ------------ Related to gameplay
-    //return if evaluation is successful
-    public bool EvaluateGamePlay()
+
+    public void SetGameState(GameState newState)
     {
-        if (currentState == GameState.Playing)
+        if (currentState != null && !isTransitioning)
         {
-            if (IsWinningPlay())
-            {
-                //would be useful to add animations to win increasing gradually in AWARD state
-                creditHandler.AddWinsDontReflect(betHandler.GetCurrBet() * MathHandler.Instance.GetWinMultiplier());
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private bool IsWinningPlay()
-    {
-        //bool isWin = diceHandler.GetGamplayResult() == MathHandler.Instance.GetWinningSum();
-        bool isWin = diceHandler.GetGamplayResult() >= MathHandler.Instance.GetWinningSum();
-        return isWin;
-    }
-
-    // ------- Start of game flow
-    //
-    public void RollDiceButtonPressed()
-    {
-        if (currentState == GameState.Idle && !isTransitioning)
-        {
-            StartGame();
-            isTransitioning = true; // flag to block input during transition.
-            //currentState = GameState.Playing;
-            //StartCoroutine(PlayAnimationsAndTransitionToAward());
+            //isTransitioning = true; // Flag to block input during transition.
+            Debug.Log($"Changing game state from {currentState} to {newState}");
+            currentState = stateMap[newState];
+            // Delegate the state change to the current state object
+            currentState.HandleStateChange(newState);
         }
     }
 
-    private void StartGame()
+    public IGameState GetCurrentGameState()
     {
-        //game starts only after taking credit
-        creditHandler.TakeCredit(betHandler.GetCurrBet());
-        UpdateGameNumber();
-
-        buttonHandler.SetAllButtonInteractable(false);
-        currentState = GameState.Playing;
-        Debug.Log("Game state changed to playing");
-        diceHandler.RollDices();
-        if (EvaluateGamePlay())
-        {
-            StartCoroutine(PlayWinAnimationsAndTransitionToAward());
-        }
-        else
-            StartCoroutine(PlayNonWinningAnimationsAndTransitionToAward());
+        return currentState;
     }
 
-    private IEnumerator PlayWinAnimationsAndTransitionToAward()
-    {
-        // Play animations for a winning play.
-        yield return new WaitForSeconds(GameManager.ANIM_TIME);
-        splashHandler.DisableWinSplash();
-        AwardGame();
-    }
-
-    private IEnumerator PlayNonWinningAnimationsAndTransitionToAward()
-    {
-        // Play animations for a non-winning play.
-        yield return new WaitForSeconds(GameManager.ANIM_TIME);
-        AwardGame();
-    }
-
-    private void AwardGame()
-    {
-        //EvaluateGamePlay();
-        currentState = GameState.Award;
-        Debug.Log("Game state changed to Award");
-        
-        //ideally there should be a state here where it will wait for animatio to complete
-        if(IsWinningPlay())
-            splashHandler.TriggerWinSplash();
-
-        //would be useful to add animations to win increasing gradually
-        creditHandler.UpdateWinAmount();
-        StartCoroutine(PlayAwardAnimationsAndTransitionToIdle());
-    }
-
-    private IEnumerator PlayAwardAnimationsAndTransitionToIdle()
-    {
-        // Play animations and credit calculations for the "award" state.
-        yield return new WaitForSeconds(GameManager.ANIM_TIME);
-        Debug.Log("Game state changed to idle");
-        currentState = GameState.Idle;
-        
-        buttonHandler.SetAllButtonInteractable(true);
-        isTransitioning = false; // Reset the flag when the transition is complete.
-    }
-
-    //private IEnumerator PlayAnimationsAndTransitionToAward()
-    //{
-    //    // Play animations and game logic for the "playing" state.
-    //    yield return new WaitForSeconds(GameManager.ANIM_TIME);
-    //    AwardGame();
-    //    isTransitioning = false; // Reset the flag when the transition is complete.
-    //}
 }
 

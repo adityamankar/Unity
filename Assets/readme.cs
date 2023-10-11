@@ -1,5 +1,7 @@
 ﻿/*
 
+focused on the main game functionality. No intro and exit options.
+
 Each fcuntionality should have 3 files, Handler - Graphic Control - Logic Control. Since the logic is very small, i integrated in handler class
 Few concepts that could have been useful, but not used. Scene, Dotween
 
