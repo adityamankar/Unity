@@ -14,8 +14,7 @@ public class ButtonPlay : MonoBehaviour
 
     public void OnRollDiceButtonCallback()
     {
-        //.RollDiceButtonPressed();
-        Debug.Log("roll dice clicked and callback called");
+        //Debug.Log("roll dice clicked and callback called");
         GameManager.Instance.RollDiceButtonPressed();
     }
 }

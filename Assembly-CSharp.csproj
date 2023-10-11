@@ -76,6 +76,7 @@
     <Compile Include="Assets\Dice.cs" />
     <Compile Include="Assets\DiceHandler.cs" />
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\MathHandler.cs" />
     <Compile Include="Assets\readme.cs" />
     <Compile Include="Assets\SplashHandler.cs" />
     <Compile Include="Assets\WinSplash.cs" />

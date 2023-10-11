@@ -75,7 +75,6 @@ public class Dice : MonoBehaviour
     // ADITYA - its too late to call here. All animations are done before the actual values are set
     void AnimationEndedCallback(int diceOutcome)
     {
-        Debug.Log("i am done with animations");
         value = diceOutcome;
         numberText.text = value.ToString();
     }

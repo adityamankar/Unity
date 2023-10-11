@@ -19,7 +19,7 @@ public class DiceHandler : MonoBehaviour
 
     private void DetermineOutcome()
     {
-        int total = GameManager.MATH_FILE[GameManager.Instance.GetGameNumber()];
+        int total = MathHandler.Instance.GetDiceSumForThisGame(GameManager.Instance.GetGameNumber());
 
         while (DicesValue[0] + DicesValue[1] != total)
         {

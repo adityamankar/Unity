@@ -1,12 +1,19 @@
 ﻿/*
 
+Each fcuntionality should have 3 files, Handler - Graphic Control - Logic Control. Since the logic is very small, i integrated in handler class
+Few concepts that could have been useful, but not used. Scene, Dotween
 
 different objects with tag
 
 
+2 ways to implement the state architecture. furst, switch case and other is put state conditions inside the event/functions.
+
+All the handler could be singleton
+
 i know there is a way to keep all the assets as a bundle but i am not sure how to. so I am using individual assets
 what is game object
 
+Random in python is not truely random but we can work with it since the logic is not that complicated.
 
 for me
 what is serlialized
@@ -38,6 +45,13 @@ gameobject refers to the current object ?
 
 
 i was not able to get the object that the script is attached to through script. i thought gameObject does this. but then i attached the same object to script through inspeactor
+
+
+*** singleton classes do not need to be inherited from monobehavior??
+
+
+**** Cashin state needs to be handled in separate scene
+
 
 
 
